@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UIC SSL</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, user-scalable=no">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="function.js"></script>
+	<style>
+	.hide{display: none}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">UIC SSL</a>
+    <button class="btn btn-primary" id="login" data-toggle="modal" data-target="#loginModal">登录</button>
+	<button class="btn btn-outline-warning hide" id="exit">退出</button>
+</nav>
+<div class="container">
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="https://ssl.uic.edu.hk/dana-na/auth/url_default/login.cgi" method="post" target="_blank" id="loginform">
+                        <div class="form-group">
+                            <label for="username">用户名</label>
+                            <input type="text" class="form-control" id="username" name="username" required placeholder="请输入用户名">
+                            <small id="usernameHelp" class="form-text text-muted">以小写字母开头的学号</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密码</label>
+                            <input type="password" class="form-control" id="password" name="password" required placeholder="请输入密码">
+                            <small id="passHelp" class="form-text text-muted">UIC账户的密码</small>
+                        </div>
+                        <input type="text" class="hide" name="realm" value="UIC">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="btn-login" disabled="disabled">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<br/>
+    <form>
+        <div class="form-group">
+            <label for="url">网址</label>
+            <input type="text" class="form-control" id="url" required placeholder="请输入网址">
+        </div>
+        <button type="button" class="btn btn-primary" id="submit">浏览</button>
+    </form>
+    <br/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col" colspan="2">常用网址</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><a href="javascript:openpage('google.com')" target="_blank">Google</a></td>
+            <td><a href="javascript:openpage('ispace.uic.edu.hk')" target="_blank">iSpace</a></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:openpage('mis.uic.edu.hk')" target="_blank">UIC MIS</a></td>
+            <td><a href="javascript:openpage('cnki.net')" target="_blank">知网</a></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:openpage('http%3A%2F%2Fuic.edu.hk%2Fen%2Flrc%2Ffind%2F11245-e-resources')" target="_blank">E-Resources</a></td>
+            <td><a href="javascript:openpage('search.ebscohost.com')" target="_blank">EBSCOhost</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,2 +1,3 @@
-# ucw2018
-UICcst Website 2018 Released
+# UIC-STAT Infrastructure Navigation
+
+https://uicstat.com
